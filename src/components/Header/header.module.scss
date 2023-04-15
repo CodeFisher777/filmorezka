@@ -1,0 +1,94 @@
+.container {
+  width: 1216px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #100e19;
+  color: rgb(117, 114, 114);
+}
+
+.root {
+  a {
+    color: rgb(117, 114, 114);
+  }
+  svg {
+    fill: #727572;
+    transition: 0.3s ease;
+    &:hover {
+      fill: white;
+    }
+  }
+
+  height: 72px;
+  padding-left: 12px;
+  padding-right: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 558px;
+    &__logo {
+      width: 66px;
+      height: 48px;
+    }
+    nav {
+      ul {
+        width: 492px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        list-style-type: none;
+        li {
+          a {
+            text-decoration: none;
+            color: rgb(117, 114, 114);
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s ease;
+            &:hover {
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+  &__right {
+    width: 316px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__search {
+      width: 70px;
+      height: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-decoration: none;
+      svg {
+        width: 16px;
+        height: 17px;
+      }
+
+      &:hover {
+        fill: white;
+        color: white;
+      }
+    }
+    &__bell {
+      width: 16px;
+      height: 16px;
+      fill: #727572;
+      &:hover {
+        fill: white;
+      }
+    }
+    &__lk {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
