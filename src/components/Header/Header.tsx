@@ -1,12 +1,30 @@
 import React from 'react';
-
 import Link from 'next/link';
 import Button from '../UI/Button/Button';
 import styles from './header.module.scss';
-import logo from './logo.svg';
-import search from './search.svg';
-import bell from './bell.svg';
-import lk from './lk.svg';
+import logo2 from './logo2.png';
+import {
+  cartoonsGenreFirstColumn,
+  cartoonsGenreSecondColumn,
+  cartoonsYears,
+  cartoonsCountryes,
+  cartoonsMenu,
+} from './cartoons.json';
+import {
+  filmsGenreFirstColumn,
+  filmsGenreSecondColumn,
+  filmsYears,
+  filmsCountryes,
+  filmsMenu,
+} from './films.json';
+import {
+  seriesGenreFirstColumn,
+  seriesGenreSecondColumn,
+  seriesYears,
+  seriesCountryes,
+  seriesMenu,
+} from './series.json';
+import { LinkBlock } from './LinkBlock';
 
 const Header: React.FC = () => {
   return (
@@ -14,28 +32,61 @@ const Header: React.FC = () => {
       <div className={styles.container}>
         <div className={styles.root}>
           <div className={styles.root__left}>
-            <img className={styles.root_logo} src={logo.src} alt="logo" />
+            <img className={styles.root__left__logo} src={logo2.src} alt="logo" />
             <nav>
-              <ul>
+              <ul className={styles.root__left__mainUl}>
                 <li>
-                  <Link href="#">Мой Иви</Link>
+                  <Link className={styles.root__left__mainUl__mainLink} href="#">
+                    Мой Иви
+                  </Link>
                 </li>
                 <li>
-                  <Link href="#">Что нового</Link>
+                  <Link className={styles.root__left__mainUl__mainLink} href="#">
+                    Что нового
+                  </Link>
                 </li>
                 <li>
                   {' '}
-                  <Link href="#">Фильмы</Link>
+                  <Link href="#" className={styles.root__left__mainUl__mainLink}>
+                    Фильмы
+                  </Link>
+                  <LinkBlock
+                    genreFirstColumn={filmsGenreFirstColumn}
+                    genreSecondColumn={filmsGenreSecondColumn}
+                    years={filmsYears}
+                    countryes={filmsCountryes}
+                    menu={filmsMenu}
+                  />
                 </li>
                 <li>
                   {' '}
-                  <Link href="#">Сериалы</Link>
+                  <Link href="#" className={styles.root__left__mainUl__mainLink}>
+                    Сериалы
+                  </Link>
+                  <LinkBlock
+                    genreFirstColumn={seriesGenreFirstColumn}
+                    genreSecondColumn={seriesGenreSecondColumn}
+                    years={seriesYears}
+                    countryes={seriesCountryes}
+                    menu={seriesMenu}
+                  />
                 </li>
                 <li>
-                  <Link href="#">Мультфильмы</Link>
+                  <Link href="#" className={styles.root__left__mainUl__mainLink}>
+                    Мультфильмы
+                  </Link>
+                  <LinkBlock
+                    genreFirstColumn={cartoonsGenreFirstColumn}
+                    genreSecondColumn={cartoonsGenreSecondColumn}
+                    years={cartoonsYears}
+                    countryes={cartoonsCountryes}
+                    menu={cartoonsMenu}
+                  />
                 </li>
                 <li>
-                  <Link href="#">TV+</Link>
+                  <Link href="#" className={styles.root__left__mainUl__mainLink}>
+                    TV+
+                  </Link>
                 </li>
               </ul>
             </nav>
